@@ -7,13 +7,13 @@
 `git config --global --unset pager.log`  Unset Git pager setting  
 `git config --global color.ui auto`  Enable helpful colorization of command line output  
 `git config --global core.editor vim`  Set editor to vim (the editor launch when you try `git commit`)  
+`git config --global alias.last5 'log -5 HEAD'` Rename git command. Here we can use `git last5` as `git log -5 HEAD`  
 
-## make/review changes
+## review changes
 `git diff --staged`  Shows file differences between staging and the last file version  
-`git rm --cached <file_name>`  Removes the file from version control but preserves the file locally  
-`git log --follow <file_name>`  Lists version history for a file, including renames  
 `git diff 15d1c89...a87170b` View changes between commit 15d1c89 and commit a87170b   
-`git log 15d1c89...a87170b` View commits between commit 15d1c89 and commit a87170b   
+`git log 15d1c89...a87170b` View commits between commit 15d1c89 and commit a87170b  
+`git log --follow <file_name>`  Lists version history for a file, including renames  
   
 `git log --oneline` Display Git commits and make each commit fit in one line  
 ```console
@@ -47,3 +47,11 @@ cff1cf9 Add Doma 2
 ```
 
 `git log --author="violet" --since="2019-06-10" --until="2019-06-20"`  List all change commited by violet with given time range  
+
+## make changes
+`git rm --cached <file_name>`  Remove the file from version control but preserves the file locally  
+`git stash show stash@{5}`  Inspect the fileschange in stash change stash@{5}  
+`git stash show -p`  Shows the content change made in latest stash  
+`git stash push -k -m "test description"`  Stash all files, except the indexed ones, with give stash description  
+`git stash --patch` Prompt interactively mode that which file you would like to keep in working directory  
+`git stash drop stash@{0}` Remove given stash -- stash@{0}
