@@ -1,5 +1,7 @@
 # Git Cheet Sheet
 
+[![GitHub tag](https://img.shields.io/static/v1?label=tag&message=v2.20.1&color=blue)](https://github.com/git/git/releases/tag/v2.20.1)
+
 ## git config setting
 `git config --local --list`  List all the settings in local Git repo  
 `git config --global --list`  List all the global settings  
@@ -26,7 +28,7 @@ cff1cf9 Add Doma 2
 49efca9 Update README.md
 ```
 
-`git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`  Show Git commits with graph and color  
+`git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`  Show Git commits with graph and color, see more formats [here](https://git-scm.com/docs/pretty-formats)   
 ```console
 * a87170b - (HEAD -> master, origin/master, origin/HEAD) Add Open HTML to PDF (6 days ago) <Jeff Schwartz>
 * 391ade4 - Add Perses (6 days ago) <Júlio Falbo>
@@ -54,4 +56,13 @@ cff1cf9 Add Doma 2
 `git stash show -p`  Shows the content change made in latest stash  
 `git stash push -k -m "test description"`  Stash all files, except the indexed ones, with give stash description  
 `git stash --patch` Prompt interactively mode that which file you would like to keep in working directory  
-`git stash drop stash@{0}` Remove given stash -- stash@{0}
+`git stash drop stash@{0}` Remove given stash -- stash@{0}  
+
+## branch
+`git branch -a`  List both local and remote branch  
+`git branch -vv` List branch with sha1, commit subject and upstream branch  
+`git branch <branchname> -u origin/<remote-branchname>` Set up upstream branch  
+`git checkout -b <branchname>` Create a new branch and swtich to it  
+`git branch -d <branchname>` Delete branch  
+`git push origin -d <branchname>` Delete remote branch  
+`git merge --ff-only <branchname>`  Merge given branch into the current branch  
