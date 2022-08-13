@@ -65,4 +65,7 @@ cff1cf9 Add Doma 2
 `git checkout -b <branchname>` Create a new branch and swtich to it  
 `git branch -d <branchname>` Delete branch  
 `git push origin -d <branchname>` Delete remote branch  
-`git merge --ff-only <branchname>`  Merge given branch into the current branch  
+`git merge --ff-only <branchname>`  Merge given branch into the current branch
+
+## resolve conflict/merge changes
+`git rebase --onto <new-parent-commit> <old-parent-commit>` Switch from current parent commit to a new commnit
